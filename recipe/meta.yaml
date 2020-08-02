@@ -33,11 +33,11 @@ requirements:
     - llvm-openmp  # [osx]
   host:
     - r-base
-    - r-rcpp >=0.12.10
+    - r-rcpp >=1.0.0
   run:
     - r-base
     - {{ native }}gcc-libs         # [win]
-    - r-rcpp >=0.12.10
+    - r-rcpp >=1.0.0
     - llvm-openmp  # [osx]
 
 test:
@@ -47,11 +47,12 @@ test:
 
 about:
   home: http://www.gagolewski.com/software/genie/
-  license: GPL (>= 3)
+  license: GPL-3.0-or-later
   summary: 'A new hierarchical clustering linkage criterion: the Genie algorithm links two clusters in such a way that a chosen economic inequity measure (e.g., the Gini index) of the cluster sizes does not increase drastically above a given threshold. Benchmarks indicate a high practical usefulness of the introduced method:
     it most often outperforms the Ward or average linkage in terms of the clustering quality while retaining the single linkage speed, see (Gagolewski et al. 2016a <DOI:10.1016/j.ins.2016.05.003>, 2016b <DOI:10.1007/978-3-319-45656-0_16>) for more details.'
   license_family: GPL3
-  license_file: {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3
+  license_file:
+    - {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3
 
 extra:
   recipe-maintainers:
