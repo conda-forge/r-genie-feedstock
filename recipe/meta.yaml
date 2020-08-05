@@ -38,7 +38,8 @@ requirements:
     - r-base
     - {{ native }}gcc-libs         # [win]
     - r-rcpp >=1.0.0
-    - llvm-openmp  # [osx]
+    - r-genieclust
+    - llvm-openmp                  # [osx]
 
 test:
   commands:
