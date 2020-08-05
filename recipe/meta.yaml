@@ -34,6 +34,7 @@ requirements:
   host:
     - r-base
     - r-rcpp >=1.0.0
+    - r-genieclust
   run:
     - r-base
     - {{ native }}gcc-libs         # [win]
