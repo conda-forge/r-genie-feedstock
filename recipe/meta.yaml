@@ -1,6 +1,5 @@
 {% set version = "1.0.5" %}
 {% set posix = 'm2-' if win else '' %}
-{% set native = 'm2w64-' if win else '' %}
 
 package:
   name: r-genie
@@ -13,8 +12,7 @@ source:
   sha256: 985aa0de4bec0478bb1cbaa7b24b63616af1a0eeeca7cfdb9164b4a188cb861f
 
 build:
-  merge_build_host: true  # [win]
-  number: 2
+  number: 3
   rpaths:
     - lib/R/lib/
     - lib/
@@ -22,7 +20,9 @@ build:
 requirements:
   build:
     - {{ compiler('c') }}              # [not win]
+    - {{ stdlib("c") }}                # [not win]
     - {{ compiler('m2w64_c') }}        # [win]
+    - {{ stdlib("m2w64_c") }}          # [win]
     - {{ compiler('cxx') }}            # [not win]
     - {{ compiler('m2w64_cxx') }}      # [win]
     - {{ posix }}filesystem        # [win]
@@ -37,7 +37,6 @@ requirements:
     - r-genieclust
   run:
     - r-base
-    - {{ native }}gcc-libs         # [win]
     - r-rcpp >=1.0.0
     - r-genieclust
     - llvm-openmp                  # [osx]
