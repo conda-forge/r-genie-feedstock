@@ -1,4 +1,4 @@
-{% set version = "1.0.5" %}
+{% set version = "1.0.6" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,10 +9,10 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/genie_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/genie/genie_{{ version }}.tar.gz
-  sha256: 985aa0de4bec0478bb1cbaa7b24b63616af1a0eeeca7cfdb9164b4a188cb861f
+  sha256: ddb4bbac9be91f5c171c789558d8dae039b6b37895b09d564415330970f8bb3d
 
 build:
-  number: 4
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
